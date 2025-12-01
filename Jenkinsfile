@@ -15,8 +15,8 @@ pipeline {
 
         stage('Build Stage') {
             steps {
-                sh 'uv sync || true'
-                sh 'uv run python manage.py collectstatic --noinput || true'
+                bat 'uv sync || true'
+                bat 'uv run python manage.py collectstatic --noinput || true'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
                 expression { fileExists('Dockerfile') }
             }
             steps {
-                sh 'docker build -t saleor-app:latest .'
+                bat 'docker build -t saleor-app:latest .'
             }
         }
     }
