@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         PYTHON_VERSION = 'python'
-        UV_SKIP = 'memray'          // Skip memray on Windows
-        UV_NO_DEV = '1'             // Skip dev dependencies
+        UV_SKIP = 'memray'       // Skip memray on Windows
+        UV_NO_DEV = '1'          // Skip dev dependencies
     }
 
     stages {
@@ -27,8 +27,12 @@ pipeline {
         stage('UV Sync & Install Dependencies') {
             steps {
                 bat """
+                REM Skip memray and sync prod dependencies
                 set UV_SKIP=%UV_SKIP%
                 uv sync --no-dev
+
+                REM Install setuptools & wheel to fix pkg_resources
+                ${env.PYTHON_VERSION} -m pip install --upgrade setuptools wheel
                 """
             }
         }
@@ -36,7 +40,8 @@ pipeline {
         stage('Collect Static') {
             steps {
                 bat """
-                uv run python manage.py collectstatic --noinput
+                REM Run collectstatic inside uv virtual env
+                uv run ${env.PYTHON_VERSION} manage.py collectstatic --noinput
                 """
             }
         }
