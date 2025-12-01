@@ -2,39 +2,51 @@ pipeline {
     agent any
 
     environment {
-        SECRET_KEY = "dummy"
-        STATIC_URL = "/static/"
+        PYTHON_VERSION = 'python'
+        UV_SKIP = 'memray'       // Skip memray on Windows
+        UV_NO_DEV = '1'          // Skip dev dependencies
     }
 
     stages {
 
-        stage('Source Stage') {
+        stage('Checkout SCM') {
             steps {
                 checkout scm
             }
         }
 
-        stage('Build Stage') {
+        stage('Setup Python & UV') {
             steps {
-                // Skip memray entirely (Saleor dev dep that breaks Windows)
-                bat 'set UV_NO_BUILD=1'
-                bat 'set UV_SKIP_DEV=true'
-
-                // Sync dependencies but ignore failures from memray
-                bat 'uv sync || echo "Skipping memray build failures"'
-
-                // Run collectstatic safely
-                bat 'uv run python manage.py collectstatic --noinput || echo "Collectstatic completed"'
+                bat """
+                ${env.PYTHON_VERSION} -m pip install --upgrade pip
+                ${env.PYTHON_VERSION} -m pip install uv
+                """
             }
         }
 
-        stage('Archive Artifacts') {
+        stage('UV Sync & Install Dependencies') {
             steps {
-                archiveArtifacts artifacts: '**/dist/**', allowEmptyArchive: true
+                bat """
+                REM Skip memray and sync prod dependencies
+                set UV_SKIP=%UV_SKIP%
+                uv sync --no-dev
+
+                REM Install setuptools & wheel to fix pkg_resources
+                ${env.PYTHON_VERSION} -m pip install --upgrade setuptools wheel
+                """
             }
         }
 
-        stage('Docker Build (Windows Safe)') {
+        stage('Collect Static') {
+            steps {
+                bat """
+                REM Run collectstatic inside uv virtual env
+                uv run ${env.PYTHON_VERSION} manage.py collectstatic --noinput
+                """
+            }
+        }
+
+       stage('Docker Build (Windows Safe)') {
             when {
                 expression { fileExists('Dockerfile') }
             }
