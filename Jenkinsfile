@@ -46,34 +46,26 @@ pipeline {
             }
         }
 
-       stage('Docker Build (Windows Safe)') {
+        stage('Docker Build & Run (Optional)') {
             when {
-                expression { fileExists('Dockerfile') }
+                expression { !isUnix() ? false : true } // Skip Docker stages on Windows
             }
             steps {
-                script {
-                    echo "Checking if Docker is available..."
-
-                    // Check Docker status first
-                    def dockerOk = bat(
-                        script: 'docker info >nul 2>&1',
-                        returnStatus: true
-                    )
-
-                    if (dockerOk == 0) {
-                        echo "Docker is running. Building image..."
-                        bat 'docker build -t saleor-app:latest .'
-                    } else {
-                        echo "⚠️ Docker is NOT running. Skipping Docker build to avoid pipeline failure."
-                    }
-                }
+                bat """
+                set DOCKER_BUILDKIT=1
+                docker build -t saleor-app:latest .
+                docker run -d -p 8000:8000 --name saleor-app saleor-app:latest
+                """
             }
         }
     }
 
     post {
-        always {
-            echo "Pipeline finished!"
+        success {
+            echo 'Build completed successfully!'
+        }
+        failure {
+            echo 'Build failed. Check logs!'
         }
     }
 }
