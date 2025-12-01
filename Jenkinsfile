@@ -14,11 +14,12 @@ pipeline {
             }
         }
 
-        stage('Docker Run') {
-            steps {
-                bat 'docker run -d -p 8000:8000 --name saleor-container saleor-app:latest'
-            }
-        }
+        stage('Docker Build') {
+    steps {
+        bat 'setlocal & set DOCKER_BUILDKIT=1 && docker build -t saleor-app:latest .'
+    }
+}
+
     }
 
     post {
