@@ -14,12 +14,6 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
-    steps {
-        bat 'setlocal & set DOCKER_BUILDKIT=1 && docker build -t saleor-app:latest .'
-    }
-}
-
     }
 
     post {
