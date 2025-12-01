@@ -2,42 +2,44 @@ pipeline {
     agent any
 
     environment {
-        SECRET_KEY = "dummy"
-        STATIC_URL = "/static/"
+        PYTHON_VERSION = 'python'
+        UV_SKIP = 'memray'          // Skip memray on Windows
+        UV_NO_DEV = '1'             // Skip dev dependencies
     }
 
     stages {
 
-        stage('Checkout') {
+        stage('Checkout SCM') {
             steps {
                 checkout scm
             }
         }
 
-        stage('Setup Python & uv') {
+        stage('Setup Python & UV') {
             steps {
                 bat """
-                python -m pip install --upgrade pip
-                python -m pip install uv
+                ${env.PYTHON_VERSION} -m pip install --upgrade pip
+                ${env.PYTHON_VERSION} -m pip install uv
                 """
             }
         }
 
-        stage('UV Sync & Install Dependencies (Skip Dev)') {
+        stage('UV Sync & Install Dependencies') {
             steps {
                 bat """
+                set UV_SKIP=%UV_SKIP%
                 uv sync --no-dev
                 """
             }
         }
 
-       stage('Collect Static') {
-    steps {
-        bat """
-        uv run python manage.py collectstatic --noinput
-        """
-    }
-}
+        stage('Collect Static') {
+            steps {
+                bat """
+                uv run python manage.py collectstatic --noinput
+                """
+            }
+        }
 
         stage('Docker Build') {
             steps {
@@ -58,14 +60,11 @@ pipeline {
     }
 
     post {
-        always {
-            echo "Pipeline finished"
-        }
         success {
-            echo "Build and Docker run succeeded!"
+            echo 'Build completed successfully!'
         }
         failure {
-            echo "Build failed. Check logs!"
+            echo 'Build failed. Check logs!'
         }
     }
 }
