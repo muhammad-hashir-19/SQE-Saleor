@@ -1,0 +1,24 @@
+name: Test Stage
+
+on:
+  workflow_run:
+    workflows: ["Source & Build Stage"]
+    types:
+      - completed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install Dependencies
+        run: uv sync
+
+      - name: Run Unit Tests
+        run: uv run pytest
