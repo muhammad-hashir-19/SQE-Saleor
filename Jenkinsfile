@@ -46,18 +46,14 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
+        stage('Docker Build & Run (Optional)') {
+            when {
+                expression { !isUnix() ? false : true } // Skip Docker stages on Windows
+            }
             steps {
                 bat """
                 set DOCKER_BUILDKIT=1
                 docker build -t saleor-app:latest .
-                """
-            }
-        }
-
-        stage('Docker Run') {
-            steps {
-                bat """
                 docker run -d -p 8000:8000 --name saleor-app saleor-app:latest
                 """
             }
