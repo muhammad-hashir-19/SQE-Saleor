@@ -1,42 +1,22 @@
 pipeline {
     agent any
 
-    environment {
-        SECRET_KEY = "dummy"
-        STATIC_URL = "/static/"
-    }
-
     stages {
-        stage('Source Stage') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        stage('Build Stage') {
-            steps {
-                // Upgrade pip properly on Windows
-                bat 'python -m pip install --upgrade pip'
-                bat 'python -m pip install uv'
-
-                // Run uv commands
-                bat 'uv sync'
-                bat 'uv run python manage.py collectstatic --noinput'
-            }
-        }
-
-        stage('Archive Artifacts') {
-            steps {
-                archiveArtifacts artifacts: '**/dist/**', allowEmptyArchive: true
-            }
-        }
-
         stage('Docker Build') {
-            when {
-                expression { fileExists('Dockerfile') }
-            }
             steps {
-                bat 'docker build -t saleor-app:latest .'
+                bat 'set DOCKER_BUILDKIT=1 && docker build -t saleor-app:latest .'
+            }
+        }
+
+        stage('Docker Run') {
+            steps {
+                bat 'docker run -d -p 8000:8000 --name saleor-container saleor-app:latest'
             }
         }
     }
