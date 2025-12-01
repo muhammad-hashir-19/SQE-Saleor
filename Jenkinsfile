@@ -15,8 +15,13 @@ pipeline {
 
         stage('Build Stage') {
             steps {
-                bat 'uv sync || true'
-                bat 'uv run python manage.py collectstatic --noinput || true'
+                // Install uv if needed
+                bat 'pip install --upgrade pip'
+                bat 'pip install uv'
+
+                // Run uv commands
+                bat 'uv sync'
+                bat 'uv run python manage.py collectstatic --noinput'
             }
         }
 
@@ -38,7 +43,7 @@ pipeline {
 
     post {
         always {
-            echo "Pipeline finished "
+            echo "Pipeline finished"
         }
     }
 }
