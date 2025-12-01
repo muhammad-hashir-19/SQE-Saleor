@@ -15,9 +15,9 @@ pipeline {
 
         stage('Build Stage') {
             steps {
-                // Install uv if needed
-                bat 'pip install --upgrade pip'
-                bat 'pip install uv'
+                // Upgrade pip properly on Windows
+                bat 'python -m pip install --upgrade pip'
+                bat 'python -m pip install uv'
 
                 // Run uv commands
                 bat 'uv sync'
