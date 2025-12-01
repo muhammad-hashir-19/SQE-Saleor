@@ -31,13 +31,13 @@ pipeline {
             }
         }
 
-        stage('Collect Static') {
-            steps {
-                bat """
-                python manage.py collectstatic --noinput
-                """
-            }
-        }
+       stage('Collect Static') {
+    steps {
+        bat """
+        uv run python manage.py collectstatic --noinput
+        """
+    }
+}
 
         stage('Docker Build') {
             steps {
