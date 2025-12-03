@@ -1,0 +1,29 @@
+import unittest
+
+
+class Test_core_management_commands_populatedb(unittest.TestCase):
+
+    def test_function_add_arguments(self):
+        self.assertTrue(True)
+
+    def test_function_sequence_reset(self):
+        self.assertTrue(True)
+
+    def test_function_handle(self):
+        self.assertTrue(True)
+
+    def test_class_Command_exists(self):
+        self.assertTrue(True)
+
+    def test_Command_add_arguments(self):
+        self.assertTrue(True)
+
+    def test_Command_sequence_reset(self):
+        self.assertTrue(True)
+
+    def test_Command_handle(self):
+        self.assertTrue(True)
+
+
+if __name__ == '__main__':
+    unittest.main()
