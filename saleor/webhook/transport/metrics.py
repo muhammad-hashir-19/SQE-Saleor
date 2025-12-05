@@ -1,4 +1,4 @@
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from urllib.parse import urlparse
 
 from opentelemetry.semconv.attributes import error_attributes, server_attributes
