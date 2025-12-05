@@ -26,14 +26,14 @@ from .attributes import (
     AttributeValueByIdLoader,
 )
 
-type PRODUCT_ID = int
-type PRODUCT_TYPE_ID = int
-type PAGE_ID = int
-type VARIANT_ID = int
-type ATTRIBUTE_ID = int
-type ATTRIBUTE_SLUG = str
-type LIMIT = int | None
-type VARIANT_SELECTION = bool | None
+PRODUCT_ID = int
+PRODUCT_TYPE_ID = int
+PAGE_ID = int
+VARIANT_ID = int
+ATTRIBUTE_ID = int
+ATTRIBUTE_SLUG = str
+LIMIT = int | None
+VARIANT_SELECTION = bool | None
 
 
 class AttributesByProductIdAndLimitLoader(
