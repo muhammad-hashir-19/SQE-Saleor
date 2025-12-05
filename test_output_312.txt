@@ -1,0 +1,45 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\Hashir\Desktop\saleor\saleor\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+django: version: 5.2.8, settings: saleor.tests.settings (from option)
+rootdir: C:\Users\Hashir\Desktop\saleor\saleor
+configfile: setup.cfg
+plugins: anyio-4.10.0, Faker-26.3.0, asyncio-1.1.0, celery-1.2.1, cov-6.3.0, django-4.11.1, django-queries-1.2.0, pytest_docker_tools-3.1.9, mock-3.15.1, recording-0.13.4, socket-0.7.0, xdist-3.8.0
+asyncio: mode=Mode.AUTO, asyncio_default_fixture_loop_scope=fixture, asyncio_default_test_loop_scope=function
+collecting ... collected 0 items / 1 error
+
+=================================== ERRORS ====================================
+___ ERROR collecting saleor/tests/e2e/checkout/test_checkout_integration.py ___
+ImportError while importing test module 'C:\Users\Hashir\Desktop\saleor\saleor\saleor\tests\e2e\checkout\test_checkout_integration.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv\Lib\site-packages\_pytest\python.py:498: in importtestmodule
+    mod = import_path(
+.venv\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+..\..\..\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+.venv\Lib\site-packages\_pytest\assertion\rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+saleor\tests\e2e\checkout\test_checkout_integration.py:3: in <module>
+    from ...payment import ChargeStatus, TransactionKind
+E   ModuleNotFoundError: No module named 'saleor.tests.payment'
+============================== warnings summary ===============================
+saleor\settings.py:264
+  C:\Users\Hashir\Desktop\saleor\saleor\saleor\settings.py:264: UserWarning: SECRET_KEY not configured, using a random temporary key.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+ERROR saleor/tests/e2e/checkout/test_checkout_integration.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+========================= 1 warning, 1 error in 1.07s =========================

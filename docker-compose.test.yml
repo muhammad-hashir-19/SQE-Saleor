@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  saleor:
+    image: saleor
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    working_dir: /app
+    command: sh -c "python manage.py migrate && pytest saleor/checkout/tests/test_checkout_integration.py saleor/order/tests/test_order_integration.py saleor/payment/tests/test_payment_integration.py saleor/webhook/tests/test_webhook_integration.py saleor/discount/tests/test_discounts.py saleor/core/tests/test_postgresql_search.py --disable-warnings -v"
+    env_file:
+      - .devcontainer/backend.test.env
+    depends_on:
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_started
+      mailpit:
+        condition: service_started
+    volumes:
+      - .:/app
+
+  db:
+    image: postgres:15-alpine
+    ports:
+      - "5433:5432"  # Host port is different to avoid conflicts
+    environment:
+      POSTGRES_USER: saleor
+      POSTGRES_PASSWORD: saleor
+      POSTGRES_DB: saleor_test_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U saleor"]
+      interval: 5s
+      retries: 5
+    volumes:
+      - saleor-test-db:/var/lib/postgresql/data
+
+  cache:
+    image: redis:7-alpine
+    ports:
+      - "6380:6379"
+    volumes:
+      - saleor-test-cache:/data
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "1026:1025" # SMTP
+      - "8026:8025" # UI
+
+volumes:
+  saleor-test-db:
+    driver: local
+  saleor-test-cache:
+    driver: local

@@ -1,0 +1,500 @@
+saleor-1  | rootdir: /app
+saleor-1  | configfile: setup.cfg
+saleor-1  | plugins: pytest_docker_tools-3.1.9, cov-6.3.0, socket-0.7.0, django-queries-1.2.0, mock-3.15.1, memray-1.8.0, django-4.11.1, asyncio-1.1.0, anyio-4.10.0, celery-1.2.1, recording-0.13.4, xdist-3.8.0, Faker-26.3.0
+saleor-1  | asyncio: mode=Mode.AUTO, asyncio_default_fixture_loop_scope=fixture, asyncio_default_test_loop_scope=function
+saleor-1  | created: 4/4 workers
+saleor-1  | 4 workers [101 items]
+saleor-1  | 
+saleor-1  | scheduling tests via LoadGroupScheduling
+saleor-1  | 
+saleor-1  | saleor/checkout/tests/test_checkout_integration.py::test_checkout_payment_creation 
+saleor-1  | saleor/checkout/tests/test_checkout_integration.py::test_checkout_stock_reservation 
+saleor-1  | saleor/checkout/tests/test_checkout_integration.py::test_checkout_line_product_variant_linkage 
+saleor-1  | saleor/checkout/tests/test_checkout_integration.py::test_checkout_creation_and_database_persistence 
+saleor-1  | [gw1] [  0%] PASSED saleor/checkout/tests/test_checkout_integration.py::test_checkout_creation_and_database_persistence 
+saleor-1  | saleor/checkout/tests/test_checkout_integration.py::test_checkout_to_order_conversion 
+saleor-1  | [gw3] [  1%] PASSED saleor/checkout/tests/test_checkout_integration.py::test_checkout_payment_creation 
+saleor-1  | saleor/checkout/tests/test_checkout_integration.py::test_checkout_channel_linkage 
+saleor-1  | [gw3] [  2%] PASSED saleor/checkout/tests/test_checkout_integration.py::test_checkout_channel_linkage 
+saleor-1  | saleor/order/tests/test_order_integration.py::test_order_line_product_variant_linkage 
+saleor-1  | [gw3] [  3%] PASSED saleor/order/tests/test_order_integration.py::test_order_line_product_variant_linkage 
+saleor-1  | saleor/order/tests/test_order_integration.py::test_order_affects_stock_levels 
+saleor-1  | [gw3] [  4%] PASSED saleor/order/tests/test_order_integration.py::test_order_affects_stock_levels 
+saleor-1  | saleor/order/tests/test_order_integration.py::test_order_total_calculation_with_multiple_lines 
+saleor-1  | [gw0] [  5%] PASSED saleor/checkout/tests/test_checkout_integration.py::test_checkout_line_product_variant_linkage 
+saleor-1  | saleor/checkout/tests/test_checkout_integration.py::test_checkout_multiple_lines_total_calculation 
+saleor-1  | [gw0] [  6%] PASSED saleor/checkout/tests/test_checkout_integration.py::test_checkout_multiple_lines_total_calculation 
+saleor-1  | saleor/payment/tests/test_payment_integration.py::test_payment_creation_and_database_persistence 
+saleor-1  | [gw0] [  7%] PASSED saleor/payment/tests/test_payment_integration.py::test_payment_creation_and_database_persistence 
+saleor-1  | saleor/payment/tests/test_payment_integration.py::test_payment_transaction_creation_and_linkage 
+saleor-1  | [gw0] [  8%] PASSED saleor/payment/tests/test_payment_integration.py::test_payment_transaction_creation_and_linkage 
+saleor-1  | saleor/payment/tests/test_payment_integration.py::test_payment_refund_updates_database_state 
+saleor-1  | [gw0] [  9%] PASSED saleor/payment/tests/test_payment_integration.py::test_payment_refund_updates_database_state 
+saleor-1  | saleor/payment/tests/test_payment_integration.py::test_payment_order_linkage_and_cascade 
+saleor-1  | [gw0] [ 10%] PASSED saleor/payment/tests/test_payment_integration.py::test_payment_order_linkage_and_cascade 
+saleor-1  | saleor/payment/tests/test_payment_integration.py::test_multiple_transactions_per_payment 
+saleor-1  | [gw0] [ 11%] PASSED saleor/payment/tests/test_payment_integration.py::test_multiple_transactions_per_payment 
+saleor-1  | saleor/webhook/tests/test_webhook_integration.py::test_webhook_creation_and_database_persistence 
+saleor-1  | [gw0] [ 12%] PASSED saleor/webhook/tests/test_webhook_integration.py::test_webhook_creation_and_database_persistence 
+saleor-1  | saleor/webhook/tests/test_webhook_integration.py::test_webhook_delivery_to_external_api 
+saleor-1  | [gw0] [ 13%] PASSED saleor/webhook/tests/test_webhook_integration.py::test_webhook_delivery_to_external_api 
+saleor-1  | saleor/webhook/tests/test_webhook_integration.py::test_webhook_app_linkage 
+saleor-1  | [gw0] [ 14%] PASSED saleor/webhook/tests/test_webhook_integration.py::test_webhook_app_linkage 
+saleor-1  | saleor/webhook/tests/test_webhook_integration.py::test_webhook_retry_on_external_api_failure 
+saleor-1  | [gw0] [ 15%] PASSED saleor/webhook/tests/test_webhook_integration.py::test_webhook_retry_on_external_api_failure 
+saleor-1  | saleor/webhook/tests/test_webhook_integration.py::test_webhook_event_filtering 
+saleor-1  | [gw0] [ 16%] PASSED saleor/webhook/tests/test_webhook_integration.py::test_webhook_event_filtering 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_valid_voucher_min_spent_amount 
+saleor-1  | [gw0] [ 17%] PASSED saleor/discount/tests/test_discounts.py::test_valid_voucher_min_spent_amount 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_valid_voucher_min_spent_amount_not_reached 
+saleor-1  | [gw0] [ 18%] PASSED saleor/discount/tests/test_discounts.py::test_valid_voucher_min_spent_amount_not_reached 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_valid_voucher_min_spent_amount_voucher_not_assigned_to_channel 
+saleor-1  | [gw0] [ 19%] PASSED saleor/discount/tests/test_discounts.py::test_valid_voucher_min_spent_amount_voucher_not_assigned_to_channel 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_valid_voucher_min_checkout_items_quantity 
+saleor-1  | [gw0] [ 20%] PASSED saleor/discount/tests/test_discounts.py::test_valid_voucher_min_checkout_items_quantity 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_voucher_queryset_active 
+saleor-1  | [gw0] [ 21%] PASSED saleor/discount/tests/test_discounts.py::test_voucher_queryset_active 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_voucher_queryset_active_in_channel 
+saleor-1  | [gw0] [ 22%] PASSED saleor/discount/tests/test_discounts.py::test_voucher_queryset_active_in_channel 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_voucher_queryset_active_in_other_channel 
+saleor-1  | [gw0] [ 23%] PASSED saleor/discount/tests/test_discounts.py::test_voucher_queryset_active_in_other_channel 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_increase_voucher_usage 
+saleor-1  | [gw0] [ 24%] PASSED saleor/discount/tests/test_discounts.py::test_increase_voucher_usage 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_decrease_voucher_usage 
+saleor-1  | [gw0] [ 25%] PASSED saleor/discount/tests/test_discounts.py::test_decrease_voucher_usage 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_decrease_voucher_usage_used_0 
+saleor-1  | [gw2] [ 26%] PASSED saleor/checkout/tests/test_checkout_integration.py::test_checkout_stock_reservation 
+saleor-1  | saleor/order/tests/test_order_integration.py::test_order_creation_with_lines_and_database_persistence 
+saleor-1  | [gw0] [ 27%] PASSED saleor/discount/tests/test_discounts.py::test_decrease_voucher_usage_used_0 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_deactivate_voucher_code 
+saleor-1  | [gw0] [ 28%] PASSED saleor/discount/tests/test_discounts.py::test_deactivate_voucher_code 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_add_voucher_usage_by_customer 
+saleor-1  | [gw0] [ 29%] PASSED saleor/discount/tests/test_discounts.py::test_add_voucher_usage_by_customer 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_add_voucher_usage_by_customer_raise_not_applicable 
+saleor-1  | [gw0] [ 30%] PASSED saleor/discount/tests/test_discounts.py::test_add_voucher_usage_by_customer_raise_not_applicable 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_add_voucher_usage_by_customer_without_customer_email 
+saleor-1  | [gw0] [ 31%] PASSED saleor/discount/tests/test_discounts.py::test_add_voucher_usage_by_customer_without_customer_email 
+saleor-1  | [gw2] [ 32%] PASSED saleor/order/tests/test_order_integration.py::test_order_creation_with_lines_and_database_persistence 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_remove_voucher_usage_by_customer 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_activate_voucher_code 
+saleor-1  | [gw0] [ 33%] PASSED saleor/discount/tests/test_discounts.py::test_remove_voucher_usage_by_customer 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_remove_voucher_usage_by_customer_not_exists 
+saleor-1  | [gw2] [ 34%] PASSED saleor/discount/tests/test_discounts.py::test_activate_voucher_code 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_voucher[20-20-2-2-percentage] 
+saleor-1  | [gw0] [ 35%] PASSED saleor/discount/tests/test_discounts.py::test_remove_voucher_usage_by_customer_not_exists 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_voucher[20-None-2-None-percentage] 
+saleor-1  | [gw2] [ 36%] PASSED saleor/discount/tests/test_discounts.py::test_validate_voucher[20-20-2-2-percentage] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_voucher[20-20-2-2-fixed] 
+saleor-1  | [gw0] [ 37%] PASSED saleor/discount/tests/test_discounts.py::test_validate_voucher[20-None-2-None-percentage] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_voucher[20-None-2-None-fixed] 
+saleor-1  | [gw2] [ 38%] PASSED saleor/discount/tests/test_discounts.py::test_validate_voucher[20-20-2-2-fixed] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_staff_voucher_for_anonymous 
+saleor-1  | [gw0] [ 39%] PASSED saleor/discount/tests/test_discounts.py::test_validate_voucher[20-None-2-None-fixed] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_staff_voucher_for_normal_customer 
+saleor-1  | [gw2] [ 40%] PASSED saleor/discount/tests/test_discounts.py::test_validate_staff_voucher_for_anonymous 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_staff_voucher_for_staff_customer 
+saleor-1  | [gw0] [ 41%] PASSED saleor/discount/tests/test_discounts.py::test_validate_staff_voucher_for_normal_customer 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_voucher_not_applicable[20-50-2-10-50-percentage] 
+saleor-1  | [gw2] [ 42%] PASSED saleor/discount/tests/test_discounts.py::test_validate_staff_voucher_for_staff_customer 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_voucher_not_applicable[20-50-2-None-50-percentage] 
+saleor-1  | [gw0] [ 43%] PASSED saleor/discount/tests/test_discounts.py::test_validate_voucher_not_applicable[20-50-2-10-50-percentage] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_voucher_not_applicable[20-None-2-10-50-fixed] 
+saleor-1  | [gw2] [ 44%] PASSED saleor/discount/tests/test_discounts.py::test_validate_voucher_not_applicable[20-50-2-None-50-percentage] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_validate_voucher_not_applicable_once_per_customer 
+saleor-1  | [gw0] [ 45%] PASSED saleor/discount/tests/test_discounts.py::test_validate_voucher_not_applicable[20-None-2-10-50-fixed] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_discount_name_only_rule_name 
+saleor-1  | [gw2] [ 46%] PASSED saleor/discount/tests/test_discounts.py::test_validate_voucher_not_applicable_once_per_customer 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_discount_name_only_rule_promotion_name 
+saleor-1  | [gw0] [ 47%] PASSED saleor/discount/tests/test_discounts.py::test_get_discount_name_only_rule_name 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_discount_name_rule_and_promotion_name 
+saleor-1  | [gw2] [ 48%] PASSED saleor/discount/tests/test_discounts.py::test_get_discount_name_only_rule_promotion_name 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_discount_name_empty_names 
+saleor-1  | [gw0] [ 49%] PASSED saleor/discount/tests/test_discounts.py::test_get_discount_name_rule_and_promotion_name 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_discount_translated_name_only_rule_translation 
+saleor-1  | [gw2] [ 50%] PASSED saleor/discount/tests/test_discounts.py::test_get_discount_name_empty_names 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_discount_translated_name_only_rule_promotion_translation 
+saleor-1  | [gw0] [ 51%] PASSED saleor/discount/tests/test_discounts.py::test_get_discount_translated_name_only_rule_translation 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_discount_translated_name_rule_and_promotion_translations 
+saleor-1  | [gw2] [ 52%] PASSED saleor/discount/tests/test_discounts.py::test_get_discount_translated_name_only_rule_promotion_translation 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_discount_translated_name_no_translations 
+saleor-1  | [gw0] [ 53%] PASSED saleor/discount/tests/test_discounts.py::test_get_discount_translated_name_rule_and_promotion_translations 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_is_order_level_voucher 
+saleor-1  | [gw0] [ 54%] PASSED saleor/discount/tests/test_discounts.py::test_is_order_level_voucher 
+saleor-1  | [gw2] [ 55%] PASSED saleor/discount/tests/test_discounts.py::test_get_discount_translated_name_no_translations 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_is_order_level_voucher_no_voucher 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_is_order_level_voucher_apply_once_per_order 
+saleor-1  | [gw0] [ 56%] PASSED saleor/discount/tests/test_discounts.py::test_is_order_level_voucher_no_voucher 
+saleor-1  | [gw2] [ 57%] PASSED saleor/discount/tests/test_discounts.py::test_is_order_level_voucher_apply_once_per_order 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_is_order_level_voucher_another_type[specific_product] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_is_order_level_voucher_another_type[shipping] 
+saleor-1  | [gw0] [ 58%] PASSED saleor/discount/tests/test_discounts.py::test_is_order_level_voucher_another_type[specific_product] 
+saleor-1  | [gw2] [ 59%] PASSED saleor/discount/tests/test_discounts.py::test_is_order_level_voucher_another_type[shipping] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_the_cheapest_line_no_lines_provided 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_get_the_cheapest_line 
+saleor-1  | [gw0] [ 60%] PASSED saleor/discount/tests/test_discounts.py::test_get_the_cheapest_line_no_lines_provided 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[20-fixed-30-10-15-5] 
+saleor-1  | [gw0] [ 61%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[20-fixed-30-10-15-5] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[13.77-fixed-30-10-subtotal_portion2-shipping_portion2] 
+saleor-1  | [gw0] [ 62%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[13.77-fixed-30-10-subtotal_portion2-shipping_portion2] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[0-fixed-30-10-0-0] 
+saleor-1  | [gw2] [ 63%] PASSED saleor/discount/tests/test_discounts.py::test_get_the_cheapest_line 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[100-fixed-30-10-30-10] 
+saleor-1  | [gw0] [ 64%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[0-fixed-30-10-0-0] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[20-fixed-0-10-0-10] 
+saleor-1  | [gw2] [ 65%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[100-fixed-30-10-30-10] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-fixed-30-0-30-0] 
+saleor-1  | [gw0] [ 66%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[20-fixed-0-10-0-10] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-fixed-0-0-0-0] 
+saleor-1  | [gw2] [ 67%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-fixed-30-0-30-0] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[0-percentage-30-10-0-0] 
+saleor-1  | [gw0] [ 68%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-fixed-0-0-0-0] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-percentage-30-10-15-5] 
+saleor-1  | [gw2] [ 69%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[0-percentage-30-10-0-0] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[33.33-percentage-30-10-10-shipping_portion9] 
+saleor-1  | [gw0] [ 70%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-percentage-30-10-15-5] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[100-percentage-30-10-30-10] 
+saleor-1  | [gw2] [ 71%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[33.33-percentage-30-10-10-shipping_portion9] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-percentage-0-10-0-5] 
+saleor-1  | [gw0] [ 72%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[100-percentage-30-10-30-10] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-percentage-30-0-15-0] 
+saleor-1  | [gw2] [ 73%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-percentage-0-10-0-5] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-percentage-0-0-0-0] 
+saleor-1  | [gw0] [ 74%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-percentage-30-0-15-0] 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_discount_info_for_logs 
+saleor-1  | [gw2] [ 75%] PASSED saleor/discount/tests/test_discounts.py::test_split_manual_discount[50-percentage-0-0-0-0] 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_limit_passed_as_string 
+saleor-1  | [gw2] [ 76%] PASSED saleor/core/tests/test_rlimit.py::test_limit_passed_as_string 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_no_limits 
+saleor-1  | [gw2] [ 77%] PASSED saleor/core/tests/test_rlimit.py::test_no_limits 
+saleor-1  | [gw0] [ 78%] PASSED saleor/discount/tests/test_discounts.py::test_discount_info_for_logs 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_only_soft_limit_set 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_limit_passed_as_int 
+saleor-1  | [gw2] [ 79%] PASSED saleor/core/tests/test_rlimit.py::test_only_soft_limit_set 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_only_hard_limit_set 
+saleor-1  | [gw0] [ 80%] PASSED saleor/core/tests/test_rlimit.py::test_limit_passed_as_int 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_negative_soft_limit 
+saleor-1  | [gw2] [ 81%] PASSED saleor/core/tests/test_rlimit.py::test_only_hard_limit_set 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_negative_hard_limit 
+saleor-1  | [gw0] [ 82%] PASSED saleor/core/tests/test_rlimit.py::test_negative_soft_limit 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_invalid_soft_limit 
+saleor-1  | [gw2] [ 83%] PASSED saleor/core/tests/test_rlimit.py::test_negative_hard_limit 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_invalid_hard_limit 
+saleor-1  | [gw0] [ 84%] PASSED saleor/core/tests/test_rlimit.py::test_invalid_soft_limit 
+saleor-1  | saleor/core/tests/test_rlimit.py::test_soft_limit_greater_than_hard_limit 
+saleor-1  | [gw2] [ 85%] PASSED saleor/core/tests/test_rlimit.py::test_invalid_hard_limit 
+saleor-1  | saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[Arabica-0] 
+saleor-1  | [gw0] [ 86%] PASSED saleor/core/tests/test_rlimit.py::test_soft_limit_greater_than_hard_limit 
+saleor-1  | saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[chicken-2] 
+saleor-1  | [gw2] [ 87%] PASSED saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[Arabica-0] 
+saleor-1  | saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[blue-1] 
+saleor-1  | [gw0] [ 88%] PASSED saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[chicken-2] 
+saleor-1  | saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[roast-2] 
+saleor-1  | [gw2] [ 89%] PASSED saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[blue-1] 
+saleor-1  | saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[cool-1] 
+saleor-1  | [gw0] [ 90%] PASSED saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[roast-2] 
+saleor-1  | saleor/core/tests/test_postgresql_search.py::test_combined_flat_search_vector 
+saleor-1  | [gw2] [ 91%] PASSED saleor/core/tests/test_postgresql_search.py::test_storefront_product_fuzzy_name_search[cool-1] 
+saleor-1  | saleor/core/tests/test_postgresql_search.py::test_flat_concat_drop_exceeding_count_no_silently_fail 
+saleor-1  | [gw0] [ 92%] PASSED saleor/core/tests/test_postgresql_search.py::test_combined_flat_search_vector 
+saleor-1  | saleor/core/tests/test_postgresql_search.py::test_flat_concat_drop_exceeding_count_silently_truncate 
+saleor-1  | [gw2] [ 93%] PASSED saleor/core/tests/test_postgresql_search.py::test_flat_concat_drop_exceeding_count_no_silently_fail 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_percentage_discounts 
+saleor-1  | [gw0] [ 94%] PASSED saleor/core/tests/test_postgresql_search.py::test_flat_concat_drop_exceeding_count_silently_truncate 
+saleor-1  | saleor/discount/tests/test_discounts.py::test_fixed_discounts 
+saleor-1  | [gw2] [ 95%] PASSED saleor/discount/tests/test_discounts.py::test_percentage_discounts 
+saleor-1  | [gw0] [ 96%] PASSED saleor/discount/tests/test_discounts.py::test_fixed_discounts 
+saleor-1  | [gw1] [ 97%] FAILED saleor/checkout/tests/test_checkout_integration.py::test_checkout_to_order_conversion 
+saleor-1  | saleor/order/tests/test_order_integration.py::test_order_payment_linkage 
+saleor-1  | [gw1] [ 98%] PASSED saleor/order/tests/test_order_integration.py::test_order_payment_linkage 
+saleor-1  | [gw3] [ 99%] FAILED saleor/order/tests/test_order_integration.py::test_order_total_calculation_with_multiple_lines 
+saleor-1  | saleor/order/tests/test_order_integration.py::test_order_status_transitions_persist_to_database 
+saleor-1  | [gw3] [100%] PASSED saleor/order/tests/test_order_integration.py::test_order_status_transitions_persist_to_database 
+saleor-1  | 
+saleor-1  | =================================== FAILURES ===================================
+saleor-1  | ______________________ test_checkout_to_order_conversion _______________________
+saleor-1  | [gw1] linux -- Python 3.12.12 /usr/local/py-utils/venvs/pytest/bin/python
+saleor-1  | 
+saleor-1  | self = <django.db.backends.utils.CursorWrapper object at 0x730f40a6dc40>
+saleor-1  | sql = 'INSERT INTO "order_order" ("private_metadata", "metadata", "external_reference", "id", "number", "use_old_id", "creat...er_order"."metadata", "order_order"."shipping_tax_class_private_metadata", "order_order"."shipping_tax_class_metadata"'
+saleor-1  | params = (Jsonb({}), Jsonb({}), None, UUID('8fac0db3-3365-4dac-b500-07459842923f'), Int4(1), False, ...)
+saleor-1  | ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x730f40a6dc40>})
+saleor-1  | 
+saleor-1  |     def _execute(self, sql, params, *ignored_wrapper_args):
+saleor-1  |         # Raise a warning during app initialization (stored_app_configs is only
+saleor-1  |         # ever set during testing).
+saleor-1  |         if not apps.ready and not apps.stored_app_configs:
+saleor-1  |             warnings.warn(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
+saleor-1  |         self.db.validate_no_broken_transaction()
+saleor-1  |         with self.db.wrap_database_errors:
+saleor-1  |             if params is None:
+saleor-1  |                 # params default might be backend specific.
+saleor-1  |                 return self.cursor.execute(sql)
+saleor-1  |             else:
+saleor-1  | >               return self.cursor.execute(sql, params)
+saleor-1  |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | 
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:105: 
+saleor-1  | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+saleor-1  | 
+saleor-1  | self = <django.db.backends.postgresql.base.Cursor [closed] [INERROR] (host=db user=saleor database=test_saleor_test_db_gw1) at 0x730f41d03350>
+saleor-1  | query = 'INSERT INTO "order_order" ("private_metadata", "metadata", "external_reference", "id", "number", "use_old_id", "creat...er_order"."metadata", "order_order"."shipping_tax_class_private_metadata", "order_order"."shipping_tax_class_metadata"'
+saleor-1  | params = (Jsonb({}), Jsonb({}), None, UUID('8fac0db3-3365-4dac-b500-07459842923f'), Int4(1), False, ...)
+saleor-1  | 
+saleor-1  |     def execute(
+saleor-1  |         self,
+saleor-1  |         query: Query,
+saleor-1  |         params: Params | None = None,
+saleor-1  |         *,
+saleor-1  |         prepare: bool | None = None,
+saleor-1  |         binary: bool | None = None,
+saleor-1  |     ) -> Self:
+saleor-1  |         """
+saleor-1  |         Execute a query or command to the database.
+saleor-1  |         """
+saleor-1  |         try:
+saleor-1  |             with self._conn.lock:
+saleor-1  |                 self._conn.wait(
+saleor-1  |                     self._execute_gen(query, params, prepare=prepare, binary=binary)
+saleor-1  |                 )
+saleor-1  |         except e._NO_TRACEBACK as ex:
+saleor-1  | >           raise ex.with_traceback(None)
+saleor-1  | E           psycopg.errors.NotNullViolation: null value in column "lines_count" of relation "order_order" violates not-null constraint
+saleor-1  | E           DETAIL:  Failing row contains (2025-12-04 14:42:10.146715+00, , user@email.com, 8fac0db3-3365-4dac-b500-07459842923f, null, null, null, 0.000, null, en, 0.000, 0.000, 0.000, unfulfilled, null, null, t, , 0, , USD, {}, {}, 2, null, null, 0.000, 0.000, 0.000, , null, null, , 2025-12-04 14:42:10.148103+00, f, 1, null, 0.000, none, none, null, t, f, 0.000, null, {}, null, {}, null, null, null, 0.000, 0.000, null, 0.000, null, null, null, {}, {}).
+saleor-1  | 
+saleor-1  | /usr/local/lib/python3.12/site-packages/psycopg/cursor.py:97: NotNullViolation
+saleor-1  | 
+saleor-1  | The above exception was the direct cause of the following exception:
+saleor-1  | 
+saleor-1  | checkout_with_items = <Checkout: Checkout object (247e262d-0e2b-4468-a5fb-0cd206446446)>
+saleor-1  | 
+saleor-1  |     @pytest.mark.integration
+saleor-1  |     @pytest.mark.django_db
+saleor-1  |     def test_checkout_to_order_conversion(checkout_with_items):
+saleor-1  |         """
+saleor-1  |         Integration test: Converting checkout to order.
+saleor-1  |         Tests interaction between Checkout service, Order service, and Database.
+saleor-1  |         """
+saleor-1  |         from saleor.order.models import Order
+saleor-1  |         from saleor.order import OrderStatus
+saleor-1  |     
+saleor-1  |         checkout = checkout_with_items
+saleor-1  |         checkout_lines = checkout.lines.all()
+saleor-1  |         line_count = checkout_lines.count()
+saleor-1  |     
+saleor-1  |         # Create order from checkout data
+saleor-1  | >       order = Order.objects.create(
+saleor-1  |             channel=checkout.channel,
+saleor-1  |             currency=checkout.currency,
+saleor-1  |             status=OrderStatus.UNFULFILLED,
+saleor-1  |             user_email=checkout.email,
+saleor-1  |         )
+saleor-1  | 
+saleor-1  | saleor/checkout/tests/test_checkout_integration.py:126: 
+saleor-1  | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/manager.py:87: in manager_method
+saleor-1  |     return getattr(self.get_queryset(), name)(*args, **kwargs)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/query.py:665: in create
+saleor-1  |     obj.save(force_insert=True, using=self.db)
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/base.py:902: in save
+saleor-1  |     self.save_base(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/base.py:1008: in save_base
+saleor-1  |     updated = self._save_table(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/base.py:1169: in _save_table
+saleor-1  |     results = self._do_insert(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/base.py:1210: in _do_insert
+saleor-1  |     return manager._insert(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/manager.py:87: in manager_method
+saleor-1  |     return getattr(self.get_queryset(), name)(*args, **kwargs)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/query.py:1873: in _insert
+saleor-1  |     return query.get_compiler(using=using).execute_sql(returning_fields)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py:1882: in execute_sql
+saleor-1  |     cursor.execute(sql, params)
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:79: in execute
+saleor-1  |     return self._execute_with_wrappers(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:92: in _execute_with_wrappers
+saleor-1  |     return executor(sql, params, many, context)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:100: in _execute
+saleor-1  |     with self.db.wrap_database_errors:
+saleor-1  |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/utils.py:91: in __exit__
+saleor-1  |     raise dj_exc_value.with_traceback(traceback) from exc_value
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:105: in _execute
+saleor-1  |     return self.cursor.execute(sql, params)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+saleor-1  | 
+saleor-1  | self = <django.db.backends.postgresql.base.Cursor [closed] [INERROR] (host=db user=saleor database=test_saleor_test_db_gw1) at 0x730f41d03350>
+saleor-1  | query = 'INSERT INTO "order_order" ("private_metadata", "metadata", "external_reference", "id", "number", "use_old_id", "creat...er_order"."metadata", "order_order"."shipping_tax_class_private_metadata", "order_order"."shipping_tax_class_metadata"'
+saleor-1  | params = (Jsonb({}), Jsonb({}), None, UUID('8fac0db3-3365-4dac-b500-07459842923f'), Int4(1), False, ...)
+saleor-1  | 
+saleor-1  |     def execute(
+saleor-1  |         self,
+saleor-1  |         query: Query,
+saleor-1  |         params: Params | None = None,
+saleor-1  |         *,
+saleor-1  |         prepare: bool | None = None,
+saleor-1  |         binary: bool | None = None,
+saleor-1  |     ) -> Self:
+saleor-1  |         """
+saleor-1  |         Execute a query or command to the database.
+saleor-1  |         """
+saleor-1  |         try:
+saleor-1  |             with self._conn.lock:
+saleor-1  |                 self._conn.wait(
+saleor-1  |                     self._execute_gen(query, params, prepare=prepare, binary=binary)
+saleor-1  |                 )
+saleor-1  |         except e._NO_TRACEBACK as ex:
+saleor-1  | >           raise ex.with_traceback(None)
+saleor-1  | E           django.db.utils.IntegrityError: null value in column "lines_count" of relation "order_order" violates not-null constraint
+saleor-1  | E           DETAIL:  Failing row contains (2025-12-04 14:42:10.146715+00, , user@email.com, 8fac0db3-3365-4dac-b500-07459842923f, null, null, null, 0.000, null, en, 0.000, 0.000, 0.000, unfulfilled, null, null, t, , 0, , USD, {}, {}, 2, null, null, 0.000, 0.000, 0.000, , null, null, , 2025-12-04 14:42:10.148103+00, f, 1, null, 0.000, none, none, null, t, f, 0.000, null, {}, null, {}, null, null, null, 0.000, 0.000, null, 0.000, null, null, null, {}, {}).
+saleor-1  | 
+saleor-1  | /usr/local/lib/python3.12/site-packages/psycopg/cursor.py:97: IntegrityError
+saleor-1  | _______________ test_order_total_calculation_with_multiple_lines _______________
+saleor-1  | [gw3] linux -- Python 3.12.12 /usr/local/py-utils/venvs/pytest/bin/python
+saleor-1  | 
+saleor-1  | self = <django.db.backends.utils.CursorWrapper object at 0x70bc3aa588f0>
+saleor-1  | sql = 'INSERT INTO "order_order" ("private_metadata", "metadata", "external_reference", "id", "number", "use_old_id", "creat...er_order"."metadata", "order_order"."shipping_tax_class_private_metadata", "order_order"."shipping_tax_class_metadata"'
+saleor-1  | params = (Jsonb({}), Jsonb({}), None, UUID('7bda47e9-e2a3-4291-ad51-172ba231efaf'), Int4(3), False, ...)
+saleor-1  | ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x70bc3aa588f0>})
+saleor-1  | 
+saleor-1  |     def _execute(self, sql, params, *ignored_wrapper_args):
+saleor-1  |         # Raise a warning during app initialization (stored_app_configs is only
+saleor-1  |         # ever set during testing).
+saleor-1  |         if not apps.ready and not apps.stored_app_configs:
+saleor-1  |             warnings.warn(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
+saleor-1  |         self.db.validate_no_broken_transaction()
+saleor-1  |         with self.db.wrap_database_errors:
+saleor-1  |             if params is None:
+saleor-1  |                 # params default might be backend specific.
+saleor-1  |                 return self.cursor.execute(sql)
+saleor-1  |             else:
+saleor-1  | >               return self.cursor.execute(sql, params)
+saleor-1  |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | 
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:105: 
+saleor-1  | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+saleor-1  | 
+saleor-1  | self = <django.db.backends.postgresql.base.Cursor [closed] [INERROR] (host=db user=saleor database=test_saleor_test_db_gw3) at 0x70bc3ba69610>
+saleor-1  | query = 'INSERT INTO "order_order" ("private_metadata", "metadata", "external_reference", "id", "number", "use_old_id", "creat...er_order"."metadata", "order_order"."shipping_tax_class_private_metadata", "order_order"."shipping_tax_class_metadata"'
+saleor-1  | params = (Jsonb({}), Jsonb({}), None, UUID('7bda47e9-e2a3-4291-ad51-172ba231efaf'), Int4(3), False, ...)
+saleor-1  | 
+saleor-1  |     def execute(
+saleor-1  |         self,
+saleor-1  |         query: Query,
+saleor-1  |         params: Params | None = None,
+saleor-1  |         *,
+saleor-1  |         prepare: bool | None = None,
+saleor-1  |         binary: bool | None = None,
+saleor-1  |     ) -> Self:
+saleor-1  |         """
+saleor-1  |         Execute a query or command to the database.
+saleor-1  |         """
+saleor-1  |         try:
+saleor-1  |             with self._conn.lock:
+saleor-1  |                 self._conn.wait(
+saleor-1  |                     self._execute_gen(query, params, prepare=prepare, binary=binary)
+saleor-1  |                 )
+saleor-1  |         except e._NO_TRACEBACK as ex:
+saleor-1  | >           raise ex.with_traceback(None)
+saleor-1  | E           psycopg.errors.NotNullViolation: null value in column "lines_count" of relation "order_order" violates not-null constraint
+saleor-1  | E           DETAIL:  Failing row contains (2025-12-04 14:42:10.769767+00, , , 7bda47e9-e2a3-4291-ad51-172ba231efaf, null, null, null, 0.000, null, en, 0.000, 0.000, 0.000, unfulfilled, null, null, t, , 0, , USD, {}, {}, 6, null, null, 0.000, 0.000, 0.000, , null, null, , 2025-12-04 14:42:10.770774+00, f, 3, null, 0.000, none, none, null, t, f, 0.000, null, {}, null, {}, null, null, null, 0.000, 0.000, null, 0.000, null, null, null, {}, {}).
+saleor-1  | 
+saleor-1  | /usr/local/lib/python3.12/site-packages/psycopg/cursor.py:97: NotNullViolation
+saleor-1  | 
+saleor-1  | The above exception was the direct cause of the following exception:
+saleor-1  | 
+saleor-1  | product = <saleor.product.models.Product(pk=9, name='Test product')>
+saleor-1  | warehouse = <Warehouse: Example Warehouse>, channel_USD = <Channel: main>
+saleor-1  | 
+saleor-1  |     @pytest.mark.integration
+saleor-1  |     @pytest.mark.django_db
+saleor-1  |     def test_order_total_calculation_with_multiple_lines(
+saleor-1  |         product,
+saleor-1  |         warehouse,
+saleor-1  |         channel_USD,
+saleor-1  |     ):
+saleor-1  |         """
+saleor-1  |         Integration test: Order total calculation with multiple lines.
+saleor-1  |         Tests interaction between Order service, Product service, and Database.
+saleor-1  |         """
+saleor-1  |         from saleor.order import OrderStatus
+saleor-1  |     
+saleor-1  |         # Create order
+saleor-1  | >       order = Order.objects.create(
+saleor-1  |             channel=channel_USD,
+saleor-1  |             currency=channel_USD.currency_code,
+saleor-1  |             status=OrderStatus.UNFULFILLED,
+saleor-1  |         )
+saleor-1  | 
+saleor-1  | saleor/order/tests/test_order_integration.py:141: 
+saleor-1  | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/manager.py:87: in manager_method
+saleor-1  |     return getattr(self.get_queryset(), name)(*args, **kwargs)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/query.py:665: in create
+saleor-1  |     obj.save(force_insert=True, using=self.db)
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/base.py:902: in save
+saleor-1  |     self.save_base(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/base.py:1008: in save_base
+saleor-1  |     updated = self._save_table(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/base.py:1169: in _save_table
+saleor-1  |     results = self._do_insert(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/base.py:1210: in _do_insert
+saleor-1  |     return manager._insert(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/manager.py:87: in manager_method
+saleor-1  |     return getattr(self.get_queryset(), name)(*args, **kwargs)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/query.py:1873: in _insert
+saleor-1  |     return query.get_compiler(using=using).execute_sql(returning_fields)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py:1882: in execute_sql
+saleor-1  |     cursor.execute(sql, params)
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:79: in execute
+saleor-1  |     return self._execute_with_wrappers(
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:92: in _execute_with_wrappers
+saleor-1  |     return executor(sql, params, many, context)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:100: in _execute
+saleor-1  |     with self.db.wrap_database_errors:
+saleor-1  |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/utils.py:91: in __exit__
+saleor-1  |     raise dj_exc_value.with_traceback(traceback) from exc_value
+saleor-1  | /usr/local/lib/python3.12/site-packages/django/db/backends/utils.py:105: in _execute
+saleor-1  |     return self.cursor.execute(sql, params)
+saleor-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+saleor-1  | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+saleor-1  | 
+saleor-1  | self = <django.db.backends.postgresql.base.Cursor [closed] [INERROR] (host=db user=saleor database=test_saleor_test_db_gw3) at 0x70bc3ba69610>
+saleor-1  | query = 'INSERT INTO "order_order" ("private_metadata", "metadata", "external_reference", "id", "number", "use_old_id", "creat...er_order"."metadata", "order_order"."shipping_tax_class_private_metadata", "order_order"."shipping_tax_class_metadata"'
+saleor-1  | params = (Jsonb({}), Jsonb({}), None, UUID('7bda47e9-e2a3-4291-ad51-172ba231efaf'), Int4(3), False, ...)
+saleor-1  | 
+saleor-1  |     def execute(
+saleor-1  |         self,
+saleor-1  |         query: Query,
+saleor-1  |         params: Params | None = None,
+saleor-1  |         *,
+saleor-1  |         prepare: bool | None = None,
+saleor-1  |         binary: bool | None = None,
+saleor-1  |     ) -> Self:
+saleor-1  |         """
+saleor-1  |         Execute a query or command to the database.
+saleor-1  |         """
+saleor-1  |         try:
+saleor-1  |             with self._conn.lock:
+saleor-1  |                 self._conn.wait(
+saleor-1  |                     self._execute_gen(query, params, prepare=prepare, binary=binary)
+saleor-1  |                 )
+saleor-1  |         except e._NO_TRACEBACK as ex:
+saleor-1  | >           raise ex.with_traceback(None)
+saleor-1  | E           django.db.utils.IntegrityError: null value in column "lines_count" of relation "order_order" violates not-null constraint
+saleor-1  | E           DETAIL:  Failing row contains (2025-12-04 14:42:10.769767+00, , , 7bda47e9-e2a3-4291-ad51-172ba231efaf, null, null, null, 0.000, null, en, 0.000, 0.000, 0.000, unfulfilled, null, null, t, , 0, , USD, {}, {}, 6, null, null, 0.000, 0.000, 0.000, , null, null, , 2025-12-04 14:42:10.770774+00, f, 3, null, 0.000, none, none, null, t, f, 0.000, null, {}, null, {}, null, null, null, 0.000, 0.000, null, 0.000, null, null, null, {}, {}).
+saleor-1  | 
+saleor-1  | /usr/local/lib/python3.12/site-packages/psycopg/cursor.py:97: IntegrityError
+saleor-1  | =========================== short test summary info ============================
+saleor-1  | FAILED saleor/checkout/tests/test_checkout_integration.py::test_checkout_to_order_conversion
+saleor-1  | FAILED saleor/order/tests/test_order_integration.py::test_order_total_calculation_with_multiple_lines
+saleor-1  | =================== 2 failed, 99 passed in 437.46s (0:07:17) ===================
