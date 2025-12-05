@@ -1158,3 +1158,6 @@ patch_execution_context()
 # Patch `ExecutionResult` to remove all references that could result in reference cycles,
 # allowing memory to be freed immediately, without the need of a deep garbage collection cycle.
 patch_execution_result()
+
+PATTERNS_IGNORED_IN_QUERY_CAPTURES = []
+

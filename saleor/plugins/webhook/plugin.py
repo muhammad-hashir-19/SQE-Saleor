@@ -22,7 +22,7 @@ from ...core.telemetry import get_task_context
 from ...core.utils import build_absolute_uri, get_domain
 from ...core.utils.json_serializer import CustomJsonEncoder
 from ...core.utils.text import safe_truncate
-from ...csv.notifications import get_default_export_payload
+from ...csv_pkg.notifications import get_default_export_payload
 from ...graphql.core.context import SaleorContext
 from ...graphql.webhook.subscription_payload import (
     generate_payload_promise_from_subscription,
@@ -146,7 +146,7 @@ if TYPE_CHECKING:
     from ...account.models import Address, Group, User
     from ...attribute.models import Attribute, AttributeValue
     from ...core.utils.translations import Translation
-    from ...csv.models import ExportFile
+    from ...csv_pkg.models import ExportFile
     from ...discount.models import Promotion, PromotionRule, Voucher, VoucherCode
     from ...giftcard.models import GiftCard
     from ...invoice.models import Invoice
