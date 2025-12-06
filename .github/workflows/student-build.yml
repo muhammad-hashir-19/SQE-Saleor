@@ -123,7 +123,7 @@ jobs:
         run: |
           echo "SENTRY_DSN=${{ secrets.SENTRY_DSN }}" >> $GITHUB_ENV
 
-            - name: Deploy to Production Elastic Beanstalk
+      - name: Deploy to Production Elastic Beanstalk
         run: |
           S3_BUCKET="elasticbeanstalk-us-east-1-452323163510"
           APP_NAME="sqe"
