@@ -2,7 +2,7 @@ from typing import Final
 
 import graphene
 
-from ...csv import ExportEvents, FileTypes
+from ...csv_pkg import ExportEvents, FileTypes
 from ..core.doc_category import DOC_CATEGORY_PRODUCTS
 from ..core.enums import to_enum
 from ..core.types import BaseEnum
