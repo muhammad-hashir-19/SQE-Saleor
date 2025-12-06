@@ -149,7 +149,7 @@ jobs:
         run: |
           S3_BUCKET="elasticbeanstalk-us-east-1-452323163510"
           ENV_NAME="Sqe-prod-env"
-APP_NAME="Sqe-prod"
+          APP_NAME="Sqe-prod"
 
           VERSION_LABEL="prod-${{ github.sha }}"
           S3_KEY="deployment-${{ github.sha }}.zip"
