@@ -165,57 +165,41 @@ jobs:
         run: |
           S3_BUCKET="elasticbeanstalk-us-east-1-452323163510"
           APP_NAME="sqe"
-          ENV_NAME="Sqe-prod-env"  # Use separate prod env if needed
+          ENV_NAME="Sqe-prod-env"
           VERSION_LABEL="prod-${{ github.sha }}"
           S3_KEY="deployment-${{ github.sha }}.zip"
 
           # Upload bundle
           aws s3 cp deployment.zip s3://$S3_BUCKET/$S3_KEY
 
-          # Check if version exists
+          # Create version if it doesn't exist
           EXISTS=$(aws elasticbeanstalk describe-application-versions \
             --application-name "$APP_NAME" \
             --query "ApplicationVersions[?VersionLabel=='$VERSION_LABEL'] | length(@)")
-
           if [ "$EXISTS" -eq 0 ]; then
-            echo "Creating new application version..."
             aws elasticbeanstalk create-application-version \
               --application-name "$APP_NAME" \
               --version-label "$VERSION_LABEL" \
               --source-bundle S3Bucket="$S3_BUCKET",S3Key="$S3_KEY"
-          else
-            echo "Application version already exists — skipping creation."
           fi
 
-          # Wait for environment to be Ready
-          echo "Waiting for environment $ENV_NAME to be Ready..."
-          timeout=900  # 15 minutes
-          interval=15
-          elapsed=0
-          while true; do
+          # Wait until environment is Ready
+          STATUS=$(aws elasticbeanstalk describe-environments \
+            --application-name "$APP_NAME" \
+            --environment-names "$ENV_NAME" \
+            --query "Environments[0].Status" --output text)
+    
+          while [ "$STATUS" != "Ready" ]; do
+            echo "Current status: $STATUS — waiting 15 seconds..."
+            sleep 15
             STATUS=$(aws elasticbeanstalk describe-environments \
               --application-name "$APP_NAME" \
               --environment-names "$ENV_NAME" \
-              --query "Environments[0].Status" \
-              --output text)
+        --query "Environments[0].Status" --output text)
+    done
 
-            if [ "$STATUS" == "Ready" ]; then
-              echo "Environment is ready."
-              break
-            fi
-
-            if [ "$elapsed" -ge "$timeout" ]; then
-              echo "Timeout reached waiting for environment. Exiting."
-              exit 1
-            fi
-
-            echo "Current status: $STATUS — waiting $interval seconds..."
-            sleep $interval
-            elapsed=$((elapsed + interval))
-          done
-
-          # Update environment
-          aws elasticbeanstalk update-environment \
-            --application-name "$APP_NAME" \
-            --environment-name "$ENV_NAME" \
-            --version-label "$VERSION_LABEL"
+    # Deploy version
+    aws elasticbeanstalk update-environment \
+      --application-name "$APP_NAME" \
+      --environment-name "$ENV_NAME" \
+      --version-label "$VERSION_LABEL"
