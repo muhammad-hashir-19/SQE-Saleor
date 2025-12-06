@@ -123,21 +123,33 @@ jobs:
         run: |
           echo "SENTRY_DSN=${{ secrets.SENTRY_DSN }}" >> $GITHUB_ENV
 
-      - name: Deploy to Production Elastic Beanstalk
+            - name: Deploy to Production Elastic Beanstalk
         run: |
           S3_BUCKET="elasticbeanstalk-us-east-1-452323163510"
           APP_NAME="sqe"
-          ENV_NAME="Sqe-env"
+          ENV_NAME="Sqe-env"  # if same env is prod
           VERSION_LABEL="prod-${{ github.sha }}"
           S3_KEY="deployment-${{ github.sha }}.zip"
 
+          # Upload bundle
           aws s3 cp deployment.zip s3://$S3_BUCKET/$S3_KEY
 
-          aws elasticbeanstalk create-application-version \
+          # Check if version exists
+          EXISTS=$(aws elasticbeanstalk describe-application-versions \
             --application-name "$APP_NAME" \
-            --version-label "$VERSION_LABEL" \
-            --source-bundle S3Bucket="$S3_BUCKET",S3Key="$S3_KEY"
+            --query "ApplicationVersions[?VersionLabel=='$VERSION_LABEL'] | length(@)")
 
+          if [ "$EXISTS" -eq 0 ]; then
+            echo "Creating new application version..."
+            aws elasticbeanstalk create-application-version \
+              --application-name "$APP_NAME" \
+              --version-label "$VERSION_LABEL" \
+              --source-bundle S3Bucket="$S3_BUCKET",S3Key="$S3_KEY"
+          else
+            echo "Application version already exists — skipping creation."
+          fi
+
+          # Deploy version
           aws elasticbeanstalk update-environment \
             --application-name "$APP_NAME" \
             --environment-name "$ENV_NAME" \
