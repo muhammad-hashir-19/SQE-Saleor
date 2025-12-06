@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from ...csv.models import ExportEvent
+from ...csv_pkg.models import ExportEvent
 from ..core.dataloaders import DataLoader
 
 

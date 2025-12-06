@@ -1,6 +1,6 @@
 from ...celeryconf import app
 from ...core.db.connection import allow_writer
-from ...csv.events import export_failed_info_sent_event, export_file_sent_event
+from ...csv_pkg.events import export_failed_info_sent_event, export_file_sent_event
 from ...graphql.core.utils import from_global_id_or_none
 from ..email_common import EmailConfig, send_email
 

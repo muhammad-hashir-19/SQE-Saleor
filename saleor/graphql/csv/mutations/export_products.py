@@ -1,8 +1,8 @@
 import graphene
 
-from ....csv import models as csv_models
-from ....csv.events import export_started_event
-from ....csv.tasks import export_products_task
+from ....csv_pkg import models as csv_models
+from ....csv_pkg.events import export_started_event
+from ....csv_pkg.tasks import export_products_task
 from ....permission.enums import ProductPermissions
 from ....webhook.event_types import WebhookEventAsyncType
 from ...app.dataloaders import get_app_promise

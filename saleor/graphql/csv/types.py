@@ -1,7 +1,7 @@
 import graphene
 
 from ...core.utils import build_absolute_uri
-from ...csv import models
+from ...csv_pkg import models
 from ...permission.auth_filters import AuthorizationFilters
 from ...permission.enums import AccountPermissions, AppPermission
 from ..account.types import User

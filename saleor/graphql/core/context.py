@@ -71,12 +71,12 @@ N = TypeVar("N")
 
 
 @dataclass
-class BaseContext[N]:
+class BaseContext(Generic[N]):
     node: N
 
 
 @dataclass
-class SyncWebhookControlContext(BaseContext[N]):
+class SyncWebhookControlContext(BaseContext[N], Generic[N]):
     allow_sync_webhooks: bool = True
 
     def __init__(self, node: N, allow_sync_webhooks: bool = True):
@@ -85,7 +85,7 @@ class SyncWebhookControlContext(BaseContext[N]):
 
 
 @dataclass
-class ChannelContext(BaseContext[N]):
+class ChannelContext(BaseContext[N], Generic[N]):
     channel_slug: str | None
 
 

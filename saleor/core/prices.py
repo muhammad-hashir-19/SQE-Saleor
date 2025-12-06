@@ -18,7 +18,7 @@ MAXIMUM_PRICE = (
 )
 
 
-def quantize_price[PriceType: (TaxedMoney, Money, Decimal, TaxedMoneyRange)](
+def quantize_price(
     price: PriceType, currency: str
 ) -> PriceType:
     precision = get_currency_precision(currency)

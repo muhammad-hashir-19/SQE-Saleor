@@ -18,8 +18,8 @@ from ..core import JobStatus
 from ..core.models import EventDelivery, EventDeliveryAttempt, EventPayload
 from ..core.payments import PaymentInterface
 from ..core.telemetry import initialize_telemetry, meter, tracer
-from ..csv.events import ExportEvents
-from ..csv.models import ExportEvent, ExportFile
+from ..csv_pkg.events import ExportEvents
+from ..csv_pkg.models import ExportEvent, ExportFile
 from ..discount import PromotionEvents
 from ..discount.models import (
     PromotionEvent,

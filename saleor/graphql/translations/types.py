@@ -59,7 +59,7 @@ from ..product.dataloaders import (
 from ..shipping.dataloaders import ShippingMethodByIdLoader
 from .fields import TranslationField
 
-type ATTRIBUTE_ID = int
+ATTRIBUTE_ID = int
 
 
 def get_translatable_attribute_values(
