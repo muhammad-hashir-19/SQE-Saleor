@@ -118,7 +118,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      # ✅ Only set SENTRY_DSN for production
       - name: Set Environment Variables for Monitoring
         run: |
           echo "SENTRY_DSN=${{ secrets.SENTRY_DSN }}" >> $GITHUB_ENV
