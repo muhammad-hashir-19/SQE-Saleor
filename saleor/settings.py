@@ -6,6 +6,8 @@ import os.path
 import warnings
 from typing import cast
 from urllib.parse import urlparse
+import sentry_sdk
+
 
 import dj_database_url
 import dj_email_url
@@ -42,6 +44,14 @@ from .graphql.graphql_core import (
 )
 from .graphql.promise import patch_promise
 from .patch_local import patch_local
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="YOUR_SENTRY_DSN",
+    integrations=[DjangoIntegration()],
+    traces_sample_rate=1.0,
+    send_default_pii=True
+)
 
 django_stubs_ext.monkeypatch()
 
