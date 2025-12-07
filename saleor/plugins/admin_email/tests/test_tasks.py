@@ -1,9 +1,9 @@
 from unittest import mock
 
 from ....account.notifications import get_default_user_payload
-from ....csv import ExportEvents
-from ....csv.models import ExportEvent
-from ....csv.notifications import get_default_export_payload
+from ....csv_pkg import ExportEvents
+from ....csv_pkg.models import ExportEvent
+from ....csv_pkg.notifications import get_default_export_payload
 from ....order.notifications import get_default_order_payload
 from ...email_common import EmailConfig
 from ..tasks import (

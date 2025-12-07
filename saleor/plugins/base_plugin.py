@@ -44,7 +44,7 @@ if TYPE_CHECKING:
     from ..core.notify import NotifyEventType
     from ..core.taxes import TaxData, TaxType
     from ..core.utils.translations import Translation
-    from ..csv.models import ExportFile
+    from ..csv_pkg.models import ExportFile
     from ..discount.models import Promotion, PromotionRule, Voucher, VoucherCode
     from ..giftcard.models import GiftCard
     from ..invoice.models import Invoice

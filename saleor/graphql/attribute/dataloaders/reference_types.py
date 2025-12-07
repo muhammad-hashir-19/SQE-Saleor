@@ -8,9 +8,9 @@ from ...core.dataloaders import DataLoader
 from ...page.dataloaders import PageTypeByIdLoader
 from ...product.dataloaders import ProductTypeByIdLoader
 
-type LIMIT = int | None
-type PAGE_TYPE_ID = int
-type ATTRIBUTE_ID = int
+LIMIT = int | None
+PAGE_TYPE_ID = int
+ATTRIBUTE_ID = int
 
 
 class AttributeReferenceProductTypesByAttributeIdAndLimitLoader(
