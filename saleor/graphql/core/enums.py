@@ -17,7 +17,7 @@ from ...core.units import (
     VolumeUnits,
     WeightUnits,
 )
-from ...csv import error_codes as csv_error_codes
+from ...csv_pkg import error_codes as csv_error_codes
 from ...discount import error_codes as discount_error_codes
 from ...giftcard import error_codes as giftcard_error_codes
 from ...invoice import error_codes as invoice_error_codes

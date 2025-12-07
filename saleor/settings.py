@@ -327,7 +327,7 @@ INSTALLED_APPS = [
     "saleor.channel",
     "saleor.checkout",
     "saleor.core",
-    "saleor.csv",
+    "saleor.csv_pkg",
     "saleor.graphql",
     "saleor.menu",
     "saleor.order",
@@ -718,7 +718,7 @@ CELERY_BEAT_SCHEDULE = {
         "schedule": crontab(hour=0, minute=0),
     },
     "delete-old-export-files": {
-        "task": "saleor.csv.tasks.delete_old_export_files",
+        "task": "saleor.csv_pkg.tasks.delete_old_export_files",
         "schedule": crontab(hour=1, minute=0),
     },
     "handle-promotion-toggle": {
@@ -1182,3 +1182,6 @@ patch_execution_context()
 # Patch `ExecutionResult` to remove all references that could result in reference cycles,
 # allowing memory to be freed immediately, without the need of a deep garbage collection cycle.
 patch_execution_result()
+
+PATTERNS_IGNORED_IN_QUERY_CAPTURES = []
+

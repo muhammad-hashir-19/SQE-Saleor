@@ -1,5 +1,5 @@
 import logging
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Annotated, Any, TypeVar
 
@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 logger = logging.getLogger(__name__)
 
 
-def skip_invalid_metadata[M](value: M) -> M:
+def skip_invalid_metadata(value: M) -> M:
     if not metadata_is_valid(value):
         raise PydanticUseDefault()
     return value
@@ -91,10 +91,10 @@ def default_if_invalid(
 
 OnErrorDefault = Annotated[T, WrapValidator(default_if_invalid)]
 
-DatetimeUTC = Annotated[datetime, AfterValidator(lambda v: v.astimezone(UTC))]
+DatetimeUTC = Annotated[datetime, AfterValidator(lambda v: v.astimezone(timezone.utc))]
 
 
-def skip_invalid_literal[T](value: T, handler: ValidatorFunctionWrapHandler) -> T:
+def skip_invalid_literal(value: T, handler: ValidatorFunctionWrapHandler) -> T:
     try:
         return handler(value)
     except ValidationError as err:
