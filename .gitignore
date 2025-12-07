@@ -34,3 +34,9 @@ Pipfile
 
 # Exported results file
 django-queries-results.html
+
+# Cypress artifacts
+cypress/screenshots/
+cypress/videos/
+cypress-saleor-tests/cypress/screenshots/
+cypress-saleor-tests/cypress/videos/
